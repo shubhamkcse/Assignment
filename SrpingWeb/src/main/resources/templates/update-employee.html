@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- XML name space -->
+<head>
+<meta charset="ISO-8859-1">
+<title th:utext="${titleofPage}">Insert title here{}</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome</a>
+    </div>
+  </div>
+</nav>
+
+<h1 th:utext="${msg}">Importent Message will display here</h1>
+
+<!-- action="#" th:action="@{/students/update/{id}(id=${student.id})}" th:object="${student}" -->
+<form action="#" th:action="@{emp/update/{id}(id=${employee_add.id})}" th:object="${employee}" method="post">
+	<table class="table">
+	<caption>
+			<h1>Update Employee</h1>
+		</caption>
+		<!-- <tr>
+			<td><b>Employee Id</b></td>
+			<td><input type="text" th:field="${employee_add.id}"
+				placeholder="Enter id here"></td>
+		</tr>
+ -->	<tr>
+			<td><b>Employee Name</b></td>
+			<td><input type="text" th:field="${employee_add.name}"></td>
+		</tr>
+		<tr>
+			<td><b>Employee Address</b></td>
+			<td><input type="text" th:field="${employee_add.address}"></td>
+		</tr>
+		
+		<tr>
+			<td><b>Employee Phone</b></td>
+			<td><input type="text" th:field="${employee_add.phone}"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" class="btn btn-primary" value="Update Employee"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

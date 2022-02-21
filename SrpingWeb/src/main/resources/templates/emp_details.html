@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- XML name space -->
+<head>
+<meta charset="ISO-8859-1">
+<title th:utext="${titleofPage}">Insert title here{}</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome</a>
+    </div>
+  </div>
+</nav>
+<h1 th:utext="${msg}">Importent Message will display here</h1>
+<form th:action="@{/delete}" method="get">
+ <a href="/emp/add" class="btn btn-primary"><i
+       class="fas fa-user-plus ml-2">Add Employee</i></a>
+		<table class="teble">
+			<tr>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Phone</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+			<tr th:each="employee:${employee_list}">
+				<!--<td th:utext="${employee.id}">Emp_id will aperd here</td> -->
+				<td th:utext="*{employee.name}">EmpName will apead here</td>
+				<td th:utext="*{employee.address}">EmpAddress will apead here</td>
+				<td th:utext="*{employee.phone}">EmpPhone will apead here</td>
+				<td><a th:href="@{/emp/edit/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                <td><a th:href="@{/emp/delete/{id}(id=${employee.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+			</tr>
+
+			<!-- <tr>
+				<td><input type="submit" value="Delete"><tr>
+				<td><input type="text" th:field="${employee_list.id}"></td>
+			</tr> -->
+				
+				<!-- <td><input type="button" value="Update"
+					th:formaction="@{/update}" formmethod="get"></td>
+			</tr> 
+ -->
+			</table>
+</form>
+		<!-- <form th:action="@{/save}" method="post">
+	<table class="table">
+	<caption>
+			<h1>Registration Form</h1>
+		</caption>
+		<tr>
+			<td><b>Employee id</b></td>
+			<td><input type="text" th:field="${employee_add.id}"
+				placeholder="Enter user name here"></td>
+		</tr>
+		<tr>
+			<td><b>Employee Name</b></td>
+			<td><input type="text" th:field="${employee_add.name}"
+				placeholder="Enter name id here"></td>
+		</tr>
+		<tr>
+			<td><b>Employee Address</b></td>
+			<td><input type="text" th:field="${employee_add.address}"
+				placeholder="Enter address id here"></td>
+		</tr>
+		
+		<tr>
+			<td><b>Employee Phone</b></td>
+			<td><input type="text" th:field="${employee_add.phone}"
+				placeholder="Enter phone id here"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Submit"></td>
+			<td><input type="reset" value="Reset"></td>
+		</tr>
+	</table> -->
+
+</body>
+</html>
