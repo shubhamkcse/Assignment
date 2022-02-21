@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Course Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+        <h3> Update Teacher</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#" th:action="@{/main/teach-update/{id}(id=${teacher.staffId})}" th:object="${teacher}" method="post">
+                        <div class="row">
+                           <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Staff Name</label> <input type="text" th:field="*{staffName}" class="form-control" id="staffName" placeholder="Name"> <span th:if="${#fields.hasErrors('staffName')}" th:errors="*{staffName}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="subName" class="col-form-label">Subject Name</label> <input type="text" th:field="*{subjectName}" class="form-control" id="subjectName" placeholder="SubjectName"> <span th:if="${#fields.hasErrors('subjectName')}" th:errors="*{subjectName}" class="text-danger"></span>
+                            </div>
+                             <div class="form-group col-md-8">
+                                <label for="stafDept" class="col-form-label">Staff Department</label> <input type="text" th:field="*{staffDept}" class="form-control" id="staffDept" placeholder="Department"> <span th:if="${#fields.hasErrors('staffDept')}" th:errors="*{staffDept}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Update Course">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
