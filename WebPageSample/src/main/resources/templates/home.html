@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{myscript.js}"></script>
+<link th:href="@{style.css}" rel="stylesheet"></link>
+<script type="text/javascript">
+    document.write("This is using embeded JavaScript");
+    showAlert()
+</script>
+
+</head>
+<body>
+
+<h1>Welcome to Web-Site</h1>
+
+<br>
+<br>
+<div>One More Div</div>
+<p th:text="${myobj}">Default Text to be displayed</p>
+    <p the:text="$books"></p>
+    <input type="text" name="userName" th:value="${myobj}" />
+ 
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tr th:if="${#lists.isEmpty(mybooks)}">No content Available</tr>
+        <tbody>
+ 
+            <tr th:each="book : ${mybooks}">
+                <td><span th:text="${book.title}"> Title </span></td>
+                <td><span th:text="${book.author}"> Author </span></td>
+            </tr>
+        </tbody>
+    </table>
+<br>
+<br>
+
+</body>
+</html>
