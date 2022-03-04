@@ -1,0 +1,24 @@
+<p>employee-list works!</p>
+
+<table>
+
+<tr *ngFor="let employee of employeeList" class="cart-item">
+<td>{{employee.id}}</td>
+<td>{{employee.name}}</td>
+<td>{{employee.address}}</td>
+<td>{{employee.phone}}</td>
+<td>{{employee.dob}}</td>
+
+<td><button [title]="employee.name + ' details'" type="button"
+            (click)="share()">Share</button></td>
+
+<td *ngIf="employee && employee.id < 700"><button type="button">Notify
+            Me</button></td>
+</table>
+<!-- <app-employee-list> -->
+<!--   [emp]="employee" -->
+<!--   (notify)="onNotify()"> -->
+<!-- </app-employee-list> -->
+
+
+<!-- {{ listFromJSON()}} -->

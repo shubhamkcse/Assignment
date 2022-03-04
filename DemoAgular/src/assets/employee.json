@@ -1,0 +1,29 @@
+[
+    {
+        "id": 2,
+        "name": "Mr. ABC",
+        "city": "Mumbai",
+        "phone": "43534",
+        "paid": false,
+        "type": "Overnight",
+        "price": 25.99
+    },
+    {
+        "id": 3,
+        "name": "Mr. KBC",
+        "city": "Kolkata",
+        "phone": "43534",
+        "paid": true,
+        "type": "2-Day",
+        "price": 9.99
+    },
+    {
+        "id": 2,
+        "name": "Mr. TBC",
+        "city": "Chennai",
+        "phone": "4353343",
+        "paid": false,
+        "type": "Postal",
+        "price": 2.99
+    }
+]
